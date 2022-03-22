@@ -1,0 +1,14 @@
+.navbar{
+  background-color:navy;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content:space-around;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.navbar img{
+  width:100px;
+  height: 100px;
+}
