@@ -7,4 +7,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   logo='../assets/images/logo.jpg'
+  title='Global Bank'
+  banner='../assets/images/banner.png'
 }
