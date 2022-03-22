@@ -11,6 +11,7 @@ export class AppComponent implements OnInit{
   logo:any;
   banner:any;
   title:any;
+  //dependency injection
   constructor(private configService:ConfigService) {
   }
 
