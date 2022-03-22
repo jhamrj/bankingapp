@@ -1,7 +1,10 @@
 export class MenuModel{
   private _label:any;
   private _items:Item[];
-
+  constructor(label:any,items:Item[]) {
+    this._label=label;
+    this._items=items;
+  }
 
   get label(): any {
     return this._label;
@@ -24,7 +27,11 @@ export class Item{
  private _label:any;
  private _icon:any;
  private _items:SubItem[];
-
+  constructor(label:any,icon:any,items:SubItem[]) {
+    this._label=label;
+    this._icon=icon;
+    this._items=items;
+  }
   get label(): any {
     return this._label;
   }
@@ -51,7 +58,10 @@ export class Item{
 }
 export class SubItem{
   private _label:any[]
+  constructor(label:any) {
+    this._label=label;
 
+  }
   get label(): any[] {
     return this._label;
   }
