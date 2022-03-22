@@ -1,12 +1,24 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {ConfigService} from "./config.service";
 
 @Component({
   selector: 'bank-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-  logo='../assets/images/logo.jpg'
-  title='Global Bank'
-  banner='../assets/images/banner.png'
+export class AppComponent implements OnInit{
+
+  logo:any;
+  banner:any;
+  title:any;
+  constructor(private configService:ConfigService) {
+  }
+
+  ngOnInit(): void {
+        this.logo=this.configService.getLogo();
+        this.banner=this.configService.getBanner();
+        this.title=this.configService.getTitle();
+    }
+
+
 }
