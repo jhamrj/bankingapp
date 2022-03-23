@@ -1,9 +1,11 @@
 export class MenuModel{
   private _label:any;
   private _items:Item[];
-  constructor(label:any,items:Item[]) {
+  private _routerLink:any;
+  constructor(label:any,items:Item[],routerLink:any) {
     this._label=label;
     this._items=items;
+    this._routerLink=routerLink;
   }
 
   get label(): any {
@@ -26,11 +28,13 @@ export class MenuModel{
 export class Item{
  private _label:any;
  private _icon:any;
+ private _routerLink:any;
  private _items:SubItem[];
-  constructor(label:any,icon:any,items:SubItem[]) {
+  constructor(label:any,icon:any,items:SubItem[],routerLink:any) {
     this._label=label;
     this._icon=icon;
     this._items=items;
+    this._routerLink=routerLink;
   }
   get label(): any {
     return this._label;
@@ -58,8 +62,10 @@ export class Item{
 }
 export class SubItem{
   private _label:any[]
+  private _routerLink:any;
   private _icon:any;
-  constructor(label:any,icon:any) {
+  constructor(label:any,icon:any,routerLink:any) {
+    this._routerLink=routerLink;
     this._icon=icon;
     this._label=label;
 
