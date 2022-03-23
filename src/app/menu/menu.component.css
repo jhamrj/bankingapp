@@ -3,8 +3,9 @@ p-tieredmenu,p-menuitem,p-menu-list{
 }
 section{
   width:100%;
+  margin-top: 5%;
   display: flex;
   flex-direction: row;
-  border: 2px solid red;
+
 }
 
