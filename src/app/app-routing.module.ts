@@ -50,8 +50,11 @@ const routes: Routes = [
         }]
       },
 
-    ]
-  }
+    ],
+
+  },
+  { path: '', redirectTo: '/Menu', pathMatch: 'full' },
+  { path: '**', redirectTo: '/Menu' }
 ];
 
 @NgModule({
