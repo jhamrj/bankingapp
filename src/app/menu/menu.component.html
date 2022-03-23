@@ -1,9 +1,13 @@
 <!--only when items available-->
+<section>
 <div *ngIf="items?.length>0">
 
 <p-tieredMenu [model]="items"></p-tieredMenu>
 
 </div>
+<article>
 <router-outlet>
 
 </router-outlet>
+</article>
+</section>
