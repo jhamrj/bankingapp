@@ -9,13 +9,13 @@ export const MenuData:MenuModel[]=[new MenuModel('File',
     [new SubItem('','','')],'File/Delete'),
     new Item('Export','pi pi-fw pi-external-link',[new SubItem('',
       '','')],'File/Export')
-  ],'',
+  ],'File',
 
 
   ),
   new MenuModel('Edit',
     [new Item('copy','pi pi-fw pi-pencil',
-      [new SubItem('','','Edit/Copy')],'')
+      [new SubItem('','','')],'Edit/Copy')
 
 
     ],'Edit',

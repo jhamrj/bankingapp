@@ -8,6 +8,14 @@ export class MenuModel{
     this._routerLink=routerLink;
   }
 
+  get routerLink(): any {
+    return this._routerLink;
+  }
+
+  set routerLink(value: any) {
+    this._routerLink = value;
+  }
+
   get label(): any {
     return this._label;
   }
@@ -36,6 +44,16 @@ export class Item{
     this._items=items;
     this._routerLink=routerLink;
   }
+
+
+  get routerLink(): any {
+    return this._routerLink;
+  }
+
+  set routerLink(value: any) {
+    this._routerLink = value;
+  }
+
   get label(): any {
     return this._label;
   }
@@ -72,6 +90,14 @@ export class SubItem{
 
   }
 
+
+  get routerLink(): any {
+    return this._routerLink;
+  }
+
+  set routerLink(value: any) {
+    this._routerLink = value;
+  }
 
   get icon(): any {
     return this._icon;
