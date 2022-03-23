@@ -58,10 +58,23 @@ export class Item{
 }
 export class SubItem{
   private _label:any[]
-  constructor(label:any) {
+  private _icon:any;
+  constructor(label:any,icon:any) {
+    this._icon=icon;
     this._label=label;
 
+
   }
+
+
+  get icon(): any {
+    return this._icon;
+  }
+
+  set icon(value: any) {
+    this._icon = value;
+  }
+
   get label(): any[] {
     return this._label;
   }
