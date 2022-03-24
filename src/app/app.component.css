@@ -25,6 +25,34 @@
   font-family: "Lucida Calligraphy"
 }
 
+.multicolortextul {
+  display: inline;
+  background-image: linear-gradient(to left, white,yellow,goldenrod);
+  -webkit-background-clip: text;
+  font-size: larger;
+  font-weight: bold;
+  color: transparent;
+  font-family: "Lucida Calligraphy"
+}
+ul li{
+  display: inline;
+  list-style: none;
+  margin-right: 15px ;
+
+}
+
+ul li a{
+  text-decoration: none;
+}
+
+
+a:hover{
+  text-decoration: none;
+  background-color: goldenrod;
+
+}
+
+
 aside{
 width: 10%;
   margin-top: 5%;

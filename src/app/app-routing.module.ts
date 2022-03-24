@@ -9,8 +9,18 @@ import {EditComponent} from "./edit/edit.component";
 import {DeleteComponent} from "./delete/delete.component";
 import {ExportComponent} from "./export/export.component";
 import {CopyComponent} from "./copy/copy.component";
+import {RegisterComponent} from "./register/register.component";
+import {LoginComponent} from "./login/login.component";
 
 const routes: Routes = [
+  {
+    path:'Register',
+    component:RegisterComponent
+  },
+  {
+    path:'Login',
+    component:LoginComponent
+  },
   {
     path:'Menu',
     component:MenuComponent,
@@ -53,8 +63,8 @@ const routes: Routes = [
     ],
 
   },
-  { path: '', redirectTo: '/Menu', pathMatch: 'full' },
-  { path: '**', redirectTo: '/Menu' }
+  { path: '', redirectTo: '/', pathMatch: 'full' },
+  { path: '**', redirectTo: '/' }
 ];
 
 @NgModule({

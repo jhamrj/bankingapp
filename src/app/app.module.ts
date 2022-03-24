@@ -14,6 +14,12 @@ import { NewComponent } from './new/new.component';
 import { DeleteComponent } from './delete/delete.component';
 import { ExportComponent } from './export/export.component';
 import { CopyComponent } from './copy/copy.component';
+import { RegisterComponent } from './register/register.component';
+import { LoginComponent } from './login/login.component';
+import {ReactiveFormsModule} from "@angular/forms";
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatIconModule} from "@angular/material/icon";
+import {MatInputModule} from "@angular/material/input";
 
 
 @NgModule({
@@ -27,13 +33,20 @@ import { CopyComponent } from './copy/copy.component';
     NewComponent,
     DeleteComponent,
     ExportComponent,
-    CopyComponent
+    CopyComponent,
+    RegisterComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     TieredMenuModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    MatIconModule,
+    MatInputModule
+
 
   ],
   providers: [],
