@@ -1,0 +1,69 @@
+<form class="form" [formGroup]="regFormGroup" (ngSubmit)="save()">
+<fieldset>
+  <legend>Customer Registration</legend>
+  <mat-form-field class="mat-full-width">
+    <mat-placeholder>
+      <mat-icon>perm_identity</mat-icon>
+      Customer Id
+    </mat-placeholder>
+    <input type="text" matInput [formControl]="customerId" />
+
+  </mat-form-field>
+  <mat-form-field class="mat-full-width">
+    <mat-placeholder>
+      <mat-icon>perm_identity</mat-icon>
+      Account No
+    </mat-placeholder>
+    <input type="text" matInput [formControl]="accountNo" />
+
+  </mat-form-field>
+  <mat-form-field class="mat-full-width">
+    <mat-placeholder>
+      <mat-icon>person</mat-icon>
+      FirstName
+    </mat-placeholder>
+    <input type="text" matInput [formControl]="firstName" />
+
+  </mat-form-field>
+  <mat-form-field class="mat-full-width">
+    <mat-placeholder>
+      <mat-icon>person</mat-icon>
+      LastName
+    </mat-placeholder>
+    <input type="text" matInput [formControl]="lastName" />
+
+  </mat-form-field>
+  <mat-form-field class="mat-full-width">
+    <mat-placeholder>
+      <mat-icon>verified_user</mat-icon>
+      UserName
+    </mat-placeholder>
+    <input type="text" matInput [formControl]="userName" />
+
+  </mat-form-field>
+  <mat-form-field class="mat-full-width">
+    <mat-placeholder>
+      <mat-icon>password</mat-icon>
+      Password
+    </mat-placeholder>
+    <input type="password" matInput [formControl]="password" />
+
+  </mat-form-field>
+  <mat-form-field class="mat-full-width">
+    <mat-placeholder>
+      <mat-icon>password</mat-icon>
+      Confirm Password
+    </mat-placeholder>
+    <input type="password" matInput [formControl]="confirmPassword" />
+
+  </mat-form-field>
+  <div class="button">
+  <button mat-fab type="submit" color="primary" [disabled]="!regFormGroup.valid" >
+    <mat-icon>lock_open</mat-icon>
+  </button>
+  <button mat-fab type="reset" color="warn" [disabled]="!regFormGroup.valid" >
+    <mat-icon>lock_open</mat-icon>
+  </button>
+  </div>
+</fieldset>
+</form>
