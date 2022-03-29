@@ -26,3 +26,10 @@ mat-form-field{
 button{
   margin-right: 15%;
 }
+
+.validation
+{
+  margin-left: 20%;
+  color:red;
+  width:70%;
+}
