@@ -31,7 +31,7 @@ export class RegisterComponent implements OnInit {
     this.userName=new FormControl('',[Validators.required,
       Validators.pattern("[A-Za-z]{5,10}")]);
     this.password=new FormControl('',[Validators.required,
-      Validators.pattern('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\\$%\\^&\\*])(?=.{8,})')]);
+      Validators.pattern('^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?=\\S+$).{8,20}$')]);
     this.confirmPassword=new FormControl('',[Validators.required]);
 
    this.regFormGroup=formBuilder.group({
