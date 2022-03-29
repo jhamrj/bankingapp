@@ -40,7 +40,8 @@ export class RegisterComponent implements OnInit {
      firstName:this.firstName,
      lastName:this.lastName,
      userName:this.userName,
-     password:this.password
+     password:this.password,
+     confirmPassword:this.confirmPassword
    })
 
   }

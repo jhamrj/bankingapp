@@ -91,8 +91,15 @@
       <mat-icon>password</mat-icon>
       Confirm Password
     </mat-placeholder>
-    <input type="password" matInput [formControl]="confirmPassword"  appMatchvalidator="password"/>
-
+    <input id="confirmPassword" type="password" matInput [formControl]="confirmPassword"  appMatchvalidator="password"/>
+    <div [hidden]="confirmPassword.valid" class="validation">
+      <div [hidden]="!confirmPassword.hasError('required')">
+        Confirm Password is required.
+      </div>
+      <div [hidden]="confirmPassword.valid || confirmPassword.pristine" class="validation">
+        Confirm Password Not Matching Password
+      </div>
+    </div>
   </mat-form-field>
   <div class="button">
   <button mat-fab type="submit" color="primary" [disabled]="!regFormGroup.valid" >
