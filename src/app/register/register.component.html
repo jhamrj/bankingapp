@@ -77,7 +77,7 @@
       <mat-icon>password</mat-icon>
       Password
     </mat-placeholder>
-    <input type="password" matInput [formControl]="password" />
+    <input id="password" type="password" matInput [formControl]="password" />
     <div [hidden]="password.valid" class="validation">
       <div [hidden]="!password.hasError('required')">
         Password is required.
@@ -91,7 +91,7 @@
       <mat-icon>password</mat-icon>
       Confirm Password
     </mat-placeholder>
-    <input type="password" matInput [formControl]="confirmPassword" />
+    <input type="password" matInput [formControl]="confirmPassword"  appMatchvalidator="password"/>
 
   </mat-form-field>
   <div class="button">
