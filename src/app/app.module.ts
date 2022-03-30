@@ -21,6 +21,7 @@ import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatIconModule} from "@angular/material/icon";
 import {MatInputModule} from "@angular/material/input";
 import {MatchValidatorDirective} from "./register/matchvalidator.directive";
+import {HttpClientModule} from "@angular/common/http";
 
 
 
@@ -48,7 +49,8 @@ import {MatchValidatorDirective} from "./register/matchvalidator.directive";
     ReactiveFormsModule,
     MatFormFieldModule,
     MatIconModule,
-    MatInputModule
+    MatInputModule,
+    HttpClientModule
 
 
   ],
