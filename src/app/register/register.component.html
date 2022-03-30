@@ -102,10 +102,10 @@
     </div>
   </mat-form-field>
   <div class="button">
-  <button mat-fab type="submit" color="primary" [disabled]="!regFormGroup.valid" >
+  <button mat-fab type="submit" color="primary" [disabled]="!regFormGroup.valid" *ngIf=isSuccessful>
     <mat-icon>lock_open</mat-icon>
   </button>
-  <button mat-fab type="reset" color="warn" [disabled]="!regFormGroup.valid" >
+  <button mat-fab type="reset" color="warn" [disabled]="!regFormGroup.valid"  *ngIf=isSuccessful>
     <mat-icon>lock_open</mat-icon>
   </button>
   </div>

@@ -8,7 +8,7 @@ import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 })
 export class RegisterComponent implements OnInit {
 
-
+   isSuccessful=true;
   customerId:FormControl;
   accountNo:FormControl;
   firstName:FormControl;
@@ -52,7 +52,7 @@ export class RegisterComponent implements OnInit {
 
   save(){
     console.log(this.regFormGroup.value);
-
+    this.isSuccessful=false;
 
   }
 }
