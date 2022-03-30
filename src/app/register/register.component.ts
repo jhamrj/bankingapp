@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
+import { RegisterService } from '../services/register.service';
 
 @Component({
   selector: 'app-register',
@@ -18,7 +19,8 @@ export class RegisterComponent implements OnInit {
   confirmPassword:FormControl;
   regFormGroup:FormGroup;
 
-  constructor(private formBuilder:FormBuilder) {
+  constructor(private formBuilder:FormBuilder,
+              private registerService:RegisterService) {
 
     //rule
     this.customerId=new FormControl('',[Validators.required,
@@ -53,6 +55,13 @@ export class RegisterComponent implements OnInit {
   save(){
     console.log(this.regFormGroup.value);
     this.isSuccessful=false;
+    //asynchronous callback
+    this.registerService.sendCustomer(this.regFormGroup.value)
+      .subscribe(response=>console.log(response),err=>{
+        console.log(err)
+      }
+    )
+
 
   }
 }
