@@ -5,7 +5,13 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
+//template driven page
 export class LoginComponent implements OnInit {
+
+  form={
+    userName:"",
+    password:""
+  }
 
   constructor() { }
 

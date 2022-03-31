@@ -1,1 +1,22 @@
-<p>login works!</p>
+<form>
+  <fieldset>
+    <legend>Customer Login</legend>
+  <mat-form-field>
+    <mat-placeholder>
+      <mat-icon>person</mat-icon>
+      User Name
+    </mat-placeholder>
+    <input type="text" matInput   [(ngModel)]="form.userName"/>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-placeholder>
+      <mat-icon>lock</mat-icon>
+      Password
+    </mat-placeholder>
+    <input type="password" matInput [(ngModel)]="form.password" />
+  </mat-form-field>
+  <mat-form-field>
+    <button mat-flat-button>Login</button>
+  </mat-form-field>
+  </fieldset>
+</form>

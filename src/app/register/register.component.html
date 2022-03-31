@@ -105,7 +105,7 @@
   <button mat-fab class="alert alert-success" type="submit" color="primary" [disabled]="!regFormGroup.valid" *ngIf="!isSuccessful">
     <mat-icon>save</mat-icon>
   </button>
-  <button mat-fab class="alert alert-danger" type="reset" color="warn" [disabled]="!regFormGroup.valid"  *ngIf="!isSuccessful">
+  <button mat-fab class="alert alert-danger" type="reset" color="warn" [disabled]="!regFormGroup.valid"  *ngIf="isSuccessful">
     <mat-icon>format_clear</mat-icon>
   </button>
   </div>
