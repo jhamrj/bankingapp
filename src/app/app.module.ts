@@ -22,6 +22,7 @@ import {MatIconModule} from "@angular/material/icon";
 import {MatInputModule} from "@angular/material/input";
 import {MatchValidatorDirective} from "./register/matchvalidator.directive";
 import {HttpClientModule} from "@angular/common/http";
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 
@@ -50,7 +51,8 @@ import {HttpClientModule} from "@angular/common/http";
     MatFormFieldModule,
     MatIconModule,
     MatInputModule,
-    HttpClientModule
+    HttpClientModule,
+    NgbModule
 
 
   ],

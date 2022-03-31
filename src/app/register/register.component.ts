@@ -9,7 +9,7 @@ import { RegisterService } from '../services/register.service';
 })
 export class RegisterComponent implements OnInit {
 
-   isSuccessful=true;
+   isSuccessful=false;
   customerId:FormControl;
   accountNo:FormControl;
   firstName:FormControl;
@@ -54,9 +54,19 @@ export class RegisterComponent implements OnInit {
 
   save(){
     console.log(this.regFormGroup.value);
-    this.isSuccessful=false;
+    this.isSuccessful=true;
+    let customer=this.regFormGroup.value;
+    let customerObj={
+      customerId: customer.customerId,
+      accountNo: customer.accountNo,
+      firstName: customer.firstName,
+      lastName: customer.lastName,
+      userName: customer.userName,
+      password: customer.password,
+    }
+
     //asynchronous callback
-    this.registerService.sendCustomer(this.regFormGroup.value)
+    this.registerService.sendCustomer(customerObj)
       .subscribe(response=>console.log(response),err=>{
         console.log(err)
       }

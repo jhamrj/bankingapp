@@ -102,12 +102,15 @@
     </div>
   </mat-form-field>
   <div class="button">
-  <button mat-fab type="submit" color="primary" [disabled]="!regFormGroup.valid" *ngIf=isSuccessful>
-    <mat-icon>lock_open</mat-icon>
+  <button mat-fab class="alert alert-success" type="submit" color="primary" [disabled]="!regFormGroup.valid" *ngIf="!isSuccessful">
+    <mat-icon>save</mat-icon>
   </button>
-  <button mat-fab type="reset" color="warn" [disabled]="!regFormGroup.valid"  *ngIf=isSuccessful>
-    <mat-icon>lock_open</mat-icon>
+  <button mat-fab class="alert alert-danger" type="reset" color="warn" [disabled]="!regFormGroup.valid"  *ngIf="!isSuccessful">
+    <mat-icon>format_clear</mat-icon>
   </button>
   </div>
 </fieldset>
 </form>
+<div class="alert alert-success" *ngIf="isSuccessful">
+  Your registration is successful!
+</div>
