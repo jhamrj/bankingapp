@@ -2,9 +2,14 @@
 <header class="navbar">
   <img src="{{logo}}"/>
   <h1 class="multicolortext">{{title}}</h1>
-  <ul>
+  <ul *ngIf="!isLoggedIn">
     <li><a href="Register"><h6 class="multicolortextul">Signup</h6></a></li>
     <li><a href="Login"><h6 class="multicolortextul">Login</h6></a></li>
+  </ul>
+  <ul *ngIf="isLoggedIn">
+
+    <li><a href="#">
+    <h6 class="multicolortextul">Logout</h6></a></li>
   </ul>
   <img src="{{banner}}" class="banner"/>
 </header>

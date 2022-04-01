@@ -11,7 +11,7 @@ import {filter, map, take} from "rxjs/operators";
 })
 
 export class AppComponent implements OnInit{
-
+  isLoggedIn=false;
   logo:any;
   banner:any;
   title:any;
@@ -26,6 +26,7 @@ export class AppComponent implements OnInit{
               private authService:AuthService,private router:Router) {
     router.events.pipe(filter(e => e instanceof NavigationStart), take(1))
       .subscribe((e) => {
+        console.log("Route changes.....");
         this.loading = false;
         //alert('loaded - this fires only once');
       });
@@ -35,12 +36,17 @@ export class AppComponent implements OnInit{
         this.logo=this.configService.getLogo();
         this.banner=this.configService.getBanner();
         this.title=this.configService.getTitle();
-        this.token_key=this.authService.getToken();
-        this.auth_user=this.authService.getUser();
+
         console.log(this.token_key,this.auth_user);
     this.router.events
       .pipe(filter((rs): rs is NavigationEnd => rs instanceof NavigationEnd))
       .subscribe(event => {
+        console.log("Route changes.....");
+        this.token_key=this.authService.getToken();
+        this.auth_user=this.authService.getUser();
+        if(this.token_key.length>1 && this.auth_user.length>1)
+           this.isLoggedIn=true;
+
         if (
           event.id === 1 &&
           event.url === event.urlAfterRedirects
