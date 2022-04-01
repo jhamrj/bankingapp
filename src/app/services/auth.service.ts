@@ -22,6 +22,20 @@ export class AuthService {
 
   }
 
+  getToken(){
+    if(window.sessionStorage.getItem(TOKEN_KEY)!=undefined)
+     return window.sessionStorage.getItem(TOKEN_KEY);
+    else
+      return '';
+
+  }
+  getUser(){
+    if(window.sessionStorage.getItem(AUTH_USER)!=undefined)
+      return window.sessionStorage.getItem(AUTH_USER);
+    else
+      return '';
+
+  }
   signout(){
     window.sessionStorage.clear();
   }
