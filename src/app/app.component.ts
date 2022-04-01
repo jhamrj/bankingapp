@@ -24,6 +24,11 @@ export class AppComponent implements OnInit{
   //dependency injection
   constructor(private configService:ConfigService,
               private authService:AuthService,private router:Router) {
+    router.events.pipe(filter(e => e instanceof NavigationStart), take(1))
+      .subscribe((e) => {
+        this.loading = false;
+        //alert('loaded - this fires only once');
+      });
   }
 
   ngOnInit(): void {
@@ -33,6 +38,16 @@ export class AppComponent implements OnInit{
         this.token_key=this.authService.getToken();
         this.auth_user=this.authService.getUser();
         console.log(this.token_key,this.auth_user);
+    this.router.events
+      .pipe(filter((rs): rs is NavigationEnd => rs instanceof NavigationEnd))
+      .subscribe(event => {
+        if (
+          event.id === 1 &&
+          event.url === event.urlAfterRedirects
+        ) {
+          this.loading=false;
+        }
+      })
     }
 
   checkRouterEvent(routerEvent: Event): boolean {
