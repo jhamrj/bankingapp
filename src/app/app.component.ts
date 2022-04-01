@@ -24,12 +24,7 @@ export class AppComponent implements OnInit{
   //dependency injection
   constructor(private configService:ConfigService,
               private authService:AuthService,private router:Router) {
-    router.events.pipe(filter(e => e instanceof NavigationStart), take(1))
-      .subscribe((e) => {
-        console.log("Route changes.....");
-        this.loading = false;
-        //alert('loaded - this fires only once');
-      });
+
   }
 
   ngOnInit(): void {
