@@ -35,5 +35,18 @@ export class RegisterService {
     );
 
   }
+  public sendLogin(userName:any):Observable<any>
+  {
 
+    return this.httpClient.get(AUTH_API + 'customers?userName='+userName).pipe(
+      catchError( err => {
+        if ((err.status > 400)&&(err.status < 500)) {
+          return EMPTY;
+        } else {
+          return throwError(err);
+        }
+      })
+    );
+
+  }
 }

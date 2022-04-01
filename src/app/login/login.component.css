@@ -1,0 +1,28 @@
+.form{
+  width:20%;
+  margin-left: 30%;
+  margin-top: 2%;
+  font-size: large;
+  font-weight: bold;
+  background-color: cornsilk;
+
+}
+.mat-full-width {
+  width: 100%;
+}
+mat-form-field{
+  padding: 1%;
+}
+.form legend{
+  text-align: center;
+}
+
+.button{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+button{
+  margin-right: 15%;
+}
