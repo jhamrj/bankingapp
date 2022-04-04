@@ -21,8 +21,9 @@ import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatIconModule} from "@angular/material/icon";
 import {MatInputModule} from "@angular/material/input";
 import {MatchValidatorDirective} from "./register/matchvalidator.directive";
-import {HttpClientModule} from "@angular/common/http";
+import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {MockService} from "./interceptors/mock.service";
 
 
 
@@ -57,7 +58,11 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
   ],
-  providers: [],
+  providers: [{
+    provide: HTTP_INTERCEPTORS,
+    useClass: MockService,
+    multi: true
+  },],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

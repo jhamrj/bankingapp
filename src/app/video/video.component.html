@@ -1,1 +1,24 @@
-<p>video works!</p>
+<div *ngIf="comments?.length>0">
+
+<table>
+  <thead>
+
+  </thead>
+  <tbody>
+  <tr  *ngFor="let comment of comments">
+   <td>
+     {{comment.userId}}
+   </td>
+    <td>
+      {{comment.id}}
+    </td>
+    <td>
+      {{comment.title}}
+    </td>
+
+
+  </tr>
+ </tbody>
+</table>
+
+</div>

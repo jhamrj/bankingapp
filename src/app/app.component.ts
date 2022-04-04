@@ -4,6 +4,8 @@ import {AuthService} from "./services/auth.service";
 import {NavigationCancel, NavigationEnd, NavigationError, NavigationStart, Router, Event} from "@angular/router";
 import {Observable} from "rxjs/index";
 import {filter, map, take} from "rxjs/operators";
+import {HttpClient} from "@angular/common/http";
+const DATA_URL='http://localhost:4200'
 @Component({
   selector: 'bank-root',
   templateUrl: './app.component.html',
@@ -18,6 +20,7 @@ export class AppComponent implements OnInit{
   token_key:any;
   auth_user:any;
   loading = true;
+  comments:any;
   readonly loading$: Observable<boolean> = this.router.events.pipe(
     map((event) => this.checkRouterEvent(event))
   );
@@ -49,6 +52,8 @@ export class AppComponent implements OnInit{
           this.loading=false;
         }
       })
+
+
     }
 
   checkRouterEvent(routerEvent: Event): boolean {
