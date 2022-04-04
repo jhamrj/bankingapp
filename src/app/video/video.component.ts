@@ -1,5 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
+import {MatPaginator} from "@angular/material/paginator";
+import {MatSort} from "@angular/material/sort";
+import {MatTableDataSource} from "@angular/material/table";
 const DATA_URL='http://localhost:4200/Menu/File/New/Video'
 @Component({
   selector: 'app-video',
@@ -8,15 +11,25 @@ const DATA_URL='http://localhost:4200/Menu/File/New/Video'
 })
 export class VideoComponent implements OnInit {
 
+ @ViewChild(MatPaginator, {static: false}) paginator:MatPaginator;
+  @ViewChild(MatSort, {static: false}) sort: MatSort;
   comments:any
   constructor(private httpClient:HttpClient) { }
-
+  displayedColumns: string[] = [ 'id', 'title'];
+  tableSource = new MatTableDataSource();
   ngOnInit(): void {
 
     this.httpClient.get(DATA_URL).subscribe((data) => {
       console.log(data);
       this.comments = data;
+      this.tableSource.data = this.comments;
     });
+  }
+
+  ngAfterViewInit() {
+    this.tableSource.paginator = this.paginator;
+    this.tableSource.sort = this.sort;
+
   }
 
 }

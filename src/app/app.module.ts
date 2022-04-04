@@ -24,6 +24,8 @@ import {MatchValidatorDirective} from "./register/matchvalidator.directive";
 import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {MockService} from "./interceptors/mock.service";
+import {MatTableModule} from "@angular/material/table";
+import {MatPaginatorModule} from "@angular/material/paginator";
 
 
 
@@ -54,7 +56,9 @@ import {MockService} from "./interceptors/mock.service";
     MatInputModule,
     HttpClientModule,
     NgbModule,
-    FormsModule
+    FormsModule,
+    MatTableModule,
+    MatPaginatorModule
 
 
   ],

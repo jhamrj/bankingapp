@@ -17,6 +17,7 @@
     "target": "es2017",
     "resolveJsonModule": true,
     "esModuleInterop": true,
+    "strictPropertyInitialization": false,
     "module": "es2020",
     "lib": [
       "es2018",
