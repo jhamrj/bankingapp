@@ -5,6 +5,7 @@ import {MatSort} from "@angular/material/sort";
 import {MatTableDataSource} from "@angular/material/table";
 import {MatDialog} from "@angular/material/dialog";
 import {VideoeditComponent} from "./videoedit/videoedit.component";
+import {VideodeleteComponent} from "./videodelete/videodelete.component";
 const DATA_URL='http://localhost:4200/Menu/File/New/Video'
 @Component({
   selector: 'app-video',
@@ -68,6 +69,20 @@ export class VideoComponent implements OnInit,AfterViewInit {
     });
   }
   deleteRowData(elem:any) {
+    const dialogRef=this.matDialog.open(VideodeleteComponent,{
+      width: '500px',
+      data: {
+        id:elem.id,
+        title: elem.title
+      }
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      console.log(result);
+      this.tableSource.data = this.tableSource.data.filter((value:any)=>{
+        return value.id != result.id;
+      });
 
+    });
   }
 }
