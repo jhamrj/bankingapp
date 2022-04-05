@@ -1,0 +1,10 @@
+<h1 mat-dialog-title> Delete Comments Data </h1>
+<div mat-dialog-content>
+  <p>{{data.id}}</p>
+  <p>{{data.title}}</p>
+</div>
+<div mat-dialog-actions>
+  <button mat-raised-button color="primary" (click)="onNoClick()">No Thanks</button>
+  <button mat-raised-button color="warn" [mat-dialog-close]="data"  cdkFocusInitial>Ok</button>
+</div>
+
