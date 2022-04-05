@@ -30,6 +30,7 @@ import { MatSortModule } from '@angular/material/sort';
 import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
 import {MatDialogModule} from "@angular/material/dialog";
 import { VideoeditComponent } from './video/videoedit/videoedit.component';
+import {MatButtonModule} from "@angular/material/button";
 
 
 
@@ -66,7 +67,8 @@ import { VideoeditComponent } from './video/videoedit/videoedit.component';
     MatPaginatorModule,
     MatSortModule,
     MatProgressSpinnerModule,
-    MatDialogModule
+    MatDialogModule,
+    MatButtonModule
 
 
   ],

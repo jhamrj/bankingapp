@@ -21,7 +21,7 @@
       <mat-header-cell *matHeaderCellDef > Edit
       </mat-header-cell>
       <mat-cell *matCellDef="let elem">
-        <button mat-fab (click)="openDialog(elem)">
+        <button mat-fab class="alert-danger" (click)="openDialog(elem)">
           <mat-icon>
             edit
           </mat-icon>
@@ -32,7 +32,7 @@
       <mat-header-cell *matHeaderCellDef > Delete
       </mat-header-cell>
       <mat-cell *matCellDef="let elem">
-        <button mat-fab (click)="deleteRowData(elem)">
+        <button mat-fab  class="alert-danger"  (click)="deleteRowData(elem)">
           <mat-icon>
             delete
           </mat-icon>
