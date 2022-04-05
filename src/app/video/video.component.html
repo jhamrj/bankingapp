@@ -1,24 +1,57 @@
-<div *ngIf="comments?.length>0">
+<!-- New part: this is the search box -->
+<div>
+  <mat-form-field appearance="standard" class="full-width">
+    <mat-label>Filter</mat-label>
+    <input matInput (keyup)="applyFilter($event)" placeholder="Search Columns" #input>
+  </mat-form-field>
+<div *ngIf="comments?.length>0" class="ml-5" style="width: 300px;">
 
-<table>
-  <thead>
-
-  </thead>
-  <tbody>
-  <tr  *ngFor="let comment of comments">
-   <td>
-     {{comment.userId}}
-   </td>
-    <td>
-      {{comment.id}}
-    </td>
-    <td>
-      {{comment.title}}
-    </td>
+  <mat-table [dataSource]="tableSource" matSort id="contentToConvert">
 
 
-  </tr>
- </tbody>
-</table>
+    <ng-container matColumnDef="id">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Id </mat-header-cell>
+      <mat-cell *matCellDef="let elem"> {{elem.id}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="title">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Title </mat-header-cell>
+      <mat-cell *matCellDef="let elem"> {{elem.title}} </mat-cell>
+    </ng-container>
 
+
+
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+
+  </mat-table>
+  <mat-paginator [pageSizeOptions]="[3,5,7, 10, 20]" showFirstLastButtons></mat-paginator>
+
+  <!--
+  <table class="table table-striped table-bordered">
+    <thead class="thead-dark">
+
+     <th>
+       Id
+     </th>
+    <th>
+      Title
+    </th>
+    </thead>
+    <tbody>
+    <tr  *ngFor="let comment of comments">
+
+      <td>
+        {{comment.id}}
+      </td>
+      <td>
+        {{comment.title}}
+      </td>
+
+
+    </tr>
+   </tbody>
+  </table>-->
+
+</div>
 </div>
