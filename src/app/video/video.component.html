@@ -17,7 +17,29 @@
       <mat-header-cell *matHeaderCellDef mat-sort-header> Title </mat-header-cell>
       <mat-cell *matCellDef="let elem"> {{elem.title}} </mat-cell>
     </ng-container>
+    <ng-container matColumnDef="edit">
+      <mat-header-cell *matHeaderCellDef > Edit
+      </mat-header-cell>
+      <mat-cell *matCellDef="let elem">
+        <button mat-fab (click)="openDialog(elem)">
+          <mat-icon>
+            edit
+          </mat-icon>
+        </button>
+      </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="delete">
+      <mat-header-cell *matHeaderCellDef > Delete
+      </mat-header-cell>
+      <mat-cell *matCellDef="let elem">
+        <button mat-fab (click)="deleteRowData(elem)">
+          <mat-icon>
+            delete
+          </mat-icon>
+        </button>
+      </mat-cell>
 
+    </ng-container>
 
 
 

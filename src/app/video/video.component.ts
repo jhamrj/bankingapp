@@ -3,6 +3,8 @@ import {HttpClient} from "@angular/common/http";
 import {MatPaginator} from "@angular/material/paginator";
 import {MatSort} from "@angular/material/sort";
 import {MatTableDataSource} from "@angular/material/table";
+import {MatDialog} from "@angular/material/dialog";
+import {VideoeditComponent} from "./videoedit/videoedit.component";
 const DATA_URL='http://localhost:4200/Menu/File/New/Video'
 @Component({
   selector: 'app-video',
@@ -15,8 +17,8 @@ export class VideoComponent implements OnInit,AfterViewInit {
   @ViewChild(MatSort, {static: false}) sort: MatSort;
   @ViewChild('input') input: ElementRef;
   comments:any
-  constructor(private httpClient:HttpClient) { }
-  displayedColumns: string[] = [ 'id', 'title'];
+  constructor(private httpClient:HttpClient,private matDialog:MatDialog) { }
+  displayedColumns: string[] = [ 'id', 'title','edit','delete'];
   tableSource = new MatTableDataSource();
   ngOnInit(): void {
 
@@ -39,5 +41,33 @@ export class VideoComponent implements OnInit,AfterViewInit {
     if (this.tableSource.paginator) {
       this.tableSource.paginator.firstPage();
     }
+  }
+
+  openDialog(elem:any) {
+    const dialogRef=this.matDialog.open(VideoeditComponent,{
+           width: '500px',
+           data: {
+             id:elem.id,
+             title: elem.title
+           }
+         });
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      console.log(result);
+      this.updateRowData(result);
+    });
+
+  }
+  updateRowData(row_obj:any){
+    this.tableSource.data = this.tableSource.data.filter((obj:any)=>{
+      if(obj.id == row_obj.id){
+        obj.title = row_obj.title;
+
+      }
+      return true;
+    });
+  }
+  deleteRowData(elem:any) {
+
   }
 }
