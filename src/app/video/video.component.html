@@ -1,3 +1,9 @@
+<!-- New part: this is the search box -->
+<div>
+  <mat-form-field appearance="standard" class="full-width">
+    <mat-label>Filter</mat-label>
+    <input matInput (keyup)="applyFilter($event)" placeholder="Search Columns" #input>
+  </mat-form-field>
 <div *ngIf="comments?.length>0" class="ml-5" style="width: 300px;">
 
   <mat-table [dataSource]="tableSource" matSort id="contentToConvert">
@@ -47,4 +53,5 @@
    </tbody>
   </table>-->
 
+</div>
 </div>

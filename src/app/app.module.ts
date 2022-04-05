@@ -26,6 +26,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {MockService} from "./interceptors/mock.service";
 import {MatTableModule} from "@angular/material/table";
 import {MatPaginatorModule} from "@angular/material/paginator";
+import { MatSortModule } from '@angular/material/sort';
+import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
 
 
 
@@ -58,7 +60,9 @@ import {MatPaginatorModule} from "@angular/material/paginator";
     NgbModule,
     FormsModule,
     MatTableModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatSortModule,
+    MatProgressSpinnerModule
 
 
   ],
