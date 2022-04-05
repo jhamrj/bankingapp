@@ -31,6 +31,7 @@ import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
 import {MatDialogModule} from "@angular/material/dialog";
 import { VideoeditComponent } from './video/videoedit/videoedit.component';
 import {MatButtonModule} from "@angular/material/button";
+import { VideodeleteComponent } from './video/videodelete/videodelete.component';
 
 
 
@@ -49,7 +50,8 @@ import {MatButtonModule} from "@angular/material/button";
     RegisterComponent,
     LoginComponent,
     MatchValidatorDirective,
-    VideoeditComponent
+    VideoeditComponent,
+    VideodeleteComponent
   ],
   imports: [
     BrowserModule,
