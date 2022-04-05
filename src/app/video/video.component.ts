@@ -6,6 +6,7 @@ import {MatTableDataSource} from "@angular/material/table";
 import {MatDialog} from "@angular/material/dialog";
 import {VideoeditComponent} from "./videoedit/videoedit.component";
 import {VideodeleteComponent} from "./videodelete/videodelete.component";
+import {SelectionModel} from "@angular/cdk/collections";
 const DATA_URL='http://localhost:4200/Menu/File/New/Video'
 @Component({
   selector: 'app-video',
@@ -19,8 +20,16 @@ export class VideoComponent implements OnInit,AfterViewInit {
   @ViewChild('input') input: ElementRef;
   comments:any
   constructor(private httpClient:HttpClient,private matDialog:MatDialog) { }
-  displayedColumns: string[] = [ 'id', 'title','edit','delete'];
+  displayedColumns: string[] = ['select', 'id', 'title','edit','delete'];
+  selection = new SelectionModel<any>(true, []);
+
   tableSource = new MatTableDataSource();
+  /** Whether the number of selected elements matches the total number of rows. */
+  isAllSelected() {
+    const numSelected = this.selection.selected.length;
+    const numRows = this.tableSource.data.length;
+    return numSelected === numRows;
+  }
   ngOnInit(): void {
 
     this.httpClient.get(DATA_URL).subscribe((data) => {
@@ -42,6 +51,13 @@ export class VideoComponent implements OnInit,AfterViewInit {
     if (this.tableSource.paginator) {
       this.tableSource.paginator.firstPage();
     }
+    console.log(this.tableSource.filter );
+    this.tableSource.data.filter((obj:any)=> {
+      if (obj.id == this.tableSource.filter) {
+        this.selection.select(obj);
+        this.checkboxLabel(obj);
+      }
+    });
   }
 
   openDialog(elem:any) {
@@ -84,5 +100,24 @@ export class VideoComponent implements OnInit,AfterViewInit {
       });
 
     });
+  }
+
+  /** Selects all rows if they are not all selected; otherwise clear selection. */
+  masterToggle() {
+    if (this.isAllSelected()) {
+      this.selection.clear();
+      return;
+    }
+
+    this.selection.select(...this.tableSource.data);
+  }
+
+  /** The label for the checkbox on the passed row */
+  checkboxLabel(row?: any): string {
+
+    if (!row) {
+      return `${this.isAllSelected() ? 'deselect' : 'select'} all`;
+    }
+    return `${this.selection.isSelected(row) ? 'deselect' : 'select'} row ${row.position + 1}`;
   }
 }
