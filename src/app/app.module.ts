@@ -32,6 +32,7 @@ import {MatDialogModule} from "@angular/material/dialog";
 import { VideoeditComponent } from './video/videoedit/videoedit.component';
 import {MatButtonModule} from "@angular/material/button";
 import { VideodeleteComponent } from './video/videodelete/videodelete.component';
+import {MatCheckboxModule} from "@angular/material/checkbox";
 
 
 
@@ -70,7 +71,8 @@ import { VideodeleteComponent } from './video/videodelete/videodelete.component'
     MatSortModule,
     MatProgressSpinnerModule,
     MatDialogModule,
-    MatButtonModule
+    MatButtonModule,
+    MatCheckboxModule
 
 
   ],
