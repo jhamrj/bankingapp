@@ -1,1 +1,20 @@
-<p>upload works!</p>
+<form class="form ml-5" [formGroup]="profileForm" (ngSubmit)="upload()">
+  <div class="form-group">
+  <fieldset>
+    <legend>Profile Photo</legend>
+    <div class="form-group">
+    <input type="file" (change)="onFileChanged($event)"
+           [formControl]="photo">
+    <div [hidden]="photo.valid" class="validation">
+      <div [hidden]="!photo.hasError('required')">
+        **Must upload Photo**
+      </div>
+    </div>
+    </div>
+
+  </fieldset>
+  </div>
+</form>
+<div>
+  <img src="{{img}}"/>
+</div>

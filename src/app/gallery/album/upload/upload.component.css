@@ -1,0 +1,30 @@
+.form{
+  width:100%;
+  margin-left: 30%;
+  margin-top: 2%;
+  font-size: large;
+  font-weight: bold;
+  background-color: cornsilk;
+
+}
+
+.form legend{
+  text-align: center;
+}
+
+.button{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+button{
+  margin-right: 15%;
+}
+
+.validation
+{
+  margin-left: 20%;
+  color:red;
+  width:70%;
+}
