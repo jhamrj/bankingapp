@@ -59,6 +59,12 @@ const routes: Routes = [
           component: CopyComponent
         }]
       },
+      {
+        path: 'Gallery',
+        loadChildren: () => import('./gallery/gallery.module')
+          .then(m => m.GalleryModule)
+
+      }
 
     ],
 
