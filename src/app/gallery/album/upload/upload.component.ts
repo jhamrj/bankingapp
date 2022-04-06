@@ -11,7 +11,9 @@ export class UploadComponent implements OnInit {
   profileForm:FormGroup;
   private uploadedFile: any;
   private fileReader: FileReader;
-   img:any;
+   imgPath:any;
+  private message: string;
+  imgUrl: string | ArrayBuffer | null;
   constructor(private formBuilder:FormBuilder) {
     this.photo=new FormControl('',[Validators.required])
     this.profileForm=formBuilder.group({
@@ -25,8 +27,18 @@ export class UploadComponent implements OnInit {
 
   onFileChanged($event: any) {
     this.uploadedFile=$event.target.files[0];
+    var mimeType=$event.target.files[0].type;
+    if(mimeType.match(/image\/*/)==null){
+      this.message="only images can be loaded";
+      return;
+    }
    console.log(this.uploadedFile);
-
+   var reader=new FileReader();
+   this.imgPath=this.uploadedFile;
+   reader.readAsDataURL(this.uploadedFile);
+   reader.onload=(event=>{
+     this.imgUrl=reader.result;
+   })
   }
 
   upload() {
