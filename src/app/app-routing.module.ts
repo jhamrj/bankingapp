@@ -59,12 +59,18 @@ const routes: Routes = [
           component: CopyComponent
         }]
       },
+      {
+        path: 'Gallery',
+        loadChildren: () => import('./gallery/gallery.module')
+          .then(m => m.GalleryModule)
+
+      }
 
     ],
 
   },
-  { path: '', redirectTo: '/', pathMatch: 'full' },
-  { path: '**', redirectTo: '/' }
+  { path: '', redirectTo: '/Login', pathMatch: 'full' },
+  { path: '**', redirectTo: '/Login' }
 ];
 
 @NgModule({
