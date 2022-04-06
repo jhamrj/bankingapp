@@ -7,18 +7,8 @@ import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
   styleUrls: ['./upload.component.css']
 })
 export class UploadComponent implements OnInit {
-  photo: FormControl;
-  profileForm:FormGroup;
-  private uploadedFile: any;
-  private fileReader: FileReader;
-   imgPath:any;
-  private message: string;
-  imgUrl: string | ArrayBuffer | null;
-  constructor(private formBuilder:FormBuilder) {
-    this.photo=new FormControl('',[Validators.required])
-    this.profileForm=formBuilder.group({
-      photo:this.photo
-    })
+
+  constructor() {
 
   }
 
@@ -26,9 +16,9 @@ export class UploadComponent implements OnInit {
   }
 
   onFileChanged($event: any) {
-    this.uploadedFile=$event.target.files[0];
+   /* this.uploadedFile=$event.target.files[0];
     var mimeType=$event.target.files[0].type;
-    if(mimeType.match(/image\/*/)==null){
+    if(mimeType.match(/image\/!*!/)==null){
       this.message="only images can be loaded";
       return;
     }
@@ -38,7 +28,7 @@ export class UploadComponent implements OnInit {
    reader.readAsDataURL(this.uploadedFile);
    reader.onload=(event=>{
      this.imgUrl=reader.result;
-   })
+   })*/
   }
 
   upload() {

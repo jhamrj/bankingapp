@@ -5,6 +5,7 @@ import { UploadComponent } from './album/upload/upload.component';
 import {RouterModule} from "@angular/router";
 import {GalleryRoutingModule} from "./gallery-routing.module";
 import {ReactiveFormsModule} from "@angular/forms";
+import {FileUploadModule} from "primeng/fileupload";
 
 
 
@@ -17,7 +18,8 @@ import {ReactiveFormsModule} from "@angular/forms";
     CommonModule,
     RouterModule,
     GalleryRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FileUploadModule
   ]
 })
 export class GalleryModule { }
