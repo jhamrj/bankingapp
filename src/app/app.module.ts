@@ -33,6 +33,7 @@ import { VideoeditComponent } from './video/videoedit/videoedit.component';
 import {MatButtonModule} from "@angular/material/button";
 import { VideodeleteComponent } from './video/videodelete/videodelete.component';
 import {MatCheckboxModule} from "@angular/material/checkbox";
+import {FileUploadModule} from "primeng/fileupload";
 
 
 
@@ -72,7 +73,8 @@ import {MatCheckboxModule} from "@angular/material/checkbox";
     MatProgressSpinnerModule,
     MatDialogModule,
     MatButtonModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    FileUploadModule
 
 
   ],
