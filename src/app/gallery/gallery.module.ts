@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { AlbumComponent } from './album/album.component';
 import { UploadComponent } from './album/upload/upload.component';
 import {RouterModule} from "@angular/router";
+import {GalleryRoutingModule} from "./gallery-routing.module";
 
 
 
@@ -13,7 +14,8 @@ import {RouterModule} from "@angular/router";
   ],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    GalleryRoutingModule
   ]
 })
 export class GalleryModule { }

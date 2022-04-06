@@ -69,8 +69,8 @@ const routes: Routes = [
     ],
 
   },
-  { path: '', redirectTo: '/Login', pathMatch: 'full' },
-  { path: '**', redirectTo: '/Login' }
+  { path: '', redirectTo: '/', pathMatch: 'full' },
+  { path: '**', redirectTo: '/' }
 ];
 
 @NgModule({
