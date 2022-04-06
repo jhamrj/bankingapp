@@ -59,6 +59,7 @@ const routes: Routes = [
           component: CopyComponent
         }]
       },
+      //lazy loading
       {
         path: 'Gallery',
         loadChildren: () => import('./gallery/gallery.module')
@@ -69,8 +70,8 @@ const routes: Routes = [
     ],
 
   },
-  { path: '', redirectTo: '/', pathMatch: 'full' },
-  { path: '**', redirectTo: '/' }
+  { path: '', redirectTo: '/Login', pathMatch: 'full' },
+  { path: '**', redirectTo: '/Login' }
 ];
 
 @NgModule({
