@@ -1,16 +1,16 @@
-<form class="form ml-5">
-  <div class="form-group">
-  <fieldset>
-    <legend>Profile Photo</legend>
-    <div class="form-group">
-    <p-fileUpload name="files[]" (change)="onFileChanged($event)">
-    </p-fileUpload>
 
+    <div class="form-group">
+
+      <input type="file" multiple="multiple" (change)="onFileChanged($event)">
+    <!--<p-fileUpload name="files[]" (change)="onFileChanged($event)">
+    </p-fileUpload>-->
+     <!-- <p-fileUpload name="files[]"  (onUpload)="onUpload($event)"
+                   accept="image/*" >
+
+      </p-fileUpload>-->
     </div>
 
-  </fieldset>
-  </div>
-</form>
-<!--<div class="form-group">
+
+<div class="form-group">
   <img src="{{imgUrl}}"/>
-</div>-->
+</div>

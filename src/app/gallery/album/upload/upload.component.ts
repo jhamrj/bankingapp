@@ -7,6 +7,10 @@ import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
   styleUrls: ['./upload.component.css']
 })
 export class UploadComponent implements OnInit {
+  private uploadedFile: any;
+  private message: string;
+   imgPath: any;
+   imgUrl: string | ArrayBuffer | null;
 
   constructor() {
 
@@ -16,22 +20,30 @@ export class UploadComponent implements OnInit {
   }
 
   onFileChanged($event: any) {
-   /* this.uploadedFile=$event.target.files[0];
+
+    this.uploadedFile=$event.target.files[0];
+    console.log("Reaching......");
+    console.log(this.uploadedFile);
     var mimeType=$event.target.files[0].type;
-    if(mimeType.match(/image\/!*!/)==null){
+    if(mimeType.match(/image\/*/)==null){
       this.message="only images can be loaded";
+      console.log(this.message);
       return;
     }
-   console.log(this.uploadedFile);
+
    var reader=new FileReader();
    this.imgPath=this.uploadedFile;
    reader.readAsDataURL(this.uploadedFile);
    reader.onload=(event=>{
      this.imgUrl=reader.result;
-   })*/
+   })
   }
 
-  upload() {
 
-  }
+
+ /* onUpload($event: any) {
+    for(let file of $event.files) {
+    console.log(file);
+    }
+  }*/
 }
