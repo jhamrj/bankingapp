@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
+import {UploadService} from "../../../services/upload.service";
 
 @Component({
   selector: 'app-upload',
@@ -11,8 +12,8 @@ export class UploadComponent implements OnInit {
   private message: string;
    imgPath: any;
    imgUrl: string | ArrayBuffer | null;
-
-  constructor() {
+   file:any;
+  constructor(private uploadService:UploadService) {
 
   }
 
@@ -20,6 +21,22 @@ export class UploadComponent implements OnInit {
   }
 
   onFileChanged($event: any) {
+
+    //multiple files
+    console.log($event.target.files);
+
+
+    let item={
+      key:"",
+      value:""
+    }
+    for(var type in $event.target.files){
+
+      item.key=type;
+      item.value=$event.target.files[type]
+      console.log(item);
+    }
+
 
     this.uploadedFile=$event.target.files[0];
     console.log("Reaching......");
@@ -37,6 +54,17 @@ export class UploadComponent implements OnInit {
    reader.onload=(event=>{
      this.imgUrl=reader.result;
    })
+
+    const uploadImageData = new FormData();
+   console.log(this.uploadedFile.name);
+    uploadImageData.append('profilepic', this.uploadedFile, this.uploadedFile.name);
+    this.uploadService.sendImage(uploadImageData).subscribe(response=>{
+      console.log(response);
+    },
+      err=>{
+        console.log(err)
+      })
+
   }
 
 
