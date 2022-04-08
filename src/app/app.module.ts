@@ -35,6 +35,7 @@ import { VideodeleteComponent } from './video/videodelete/videodelete.component'
 import {MatCheckboxModule} from "@angular/material/checkbox";
 import {FileUploadModule} from "primeng/fileupload";
 import { PageComponent } from './bookmark/page/page.component';
+import { HighlightComponent } from './bookmark/highlight/highlight.component';
 
 
 
@@ -55,7 +56,8 @@ import { PageComponent } from './bookmark/page/page.component';
     MatchValidatorDirective,
     VideoeditComponent,
     VideodeleteComponent,
-    PageComponent
+    PageComponent,
+    HighlightComponent
   ],
   imports: [
     BrowserModule,
