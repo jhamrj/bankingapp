@@ -14,7 +14,10 @@ export class BookmarkComponent implements OnInit {
   ngOnInit(): void {
 
     this.frequentPageName='Offers';
-    this.frequentPageUrl='http://localhost:4200'
+    this.frequentPageUrl='http://localhost:4200/offers'
   }
 
+  actualColorChange() {
+    console.log("Back ground color will be changed......");
+  }
 }
