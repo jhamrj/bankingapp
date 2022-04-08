@@ -34,6 +34,7 @@ import {MatButtonModule} from "@angular/material/button";
 import { VideodeleteComponent } from './video/videodelete/videodelete.component';
 import {MatCheckboxModule} from "@angular/material/checkbox";
 import {FileUploadModule} from "primeng/fileupload";
+import { PageComponent } from './bookmark/page/page.component';
 
 
 
@@ -53,7 +54,8 @@ import {FileUploadModule} from "primeng/fileupload";
     LoginComponent,
     MatchValidatorDirective,
     VideoeditComponent,
-    VideodeleteComponent
+    VideodeleteComponent,
+    PageComponent
   ],
   imports: [
     BrowserModule,

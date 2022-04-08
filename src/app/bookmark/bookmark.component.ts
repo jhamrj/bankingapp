@@ -6,10 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./bookmark.component.css']
 })
 export class BookmarkComponent implements OnInit {
+  frequentPageName: any;
+  frequentPageUrl: any;
 
   constructor() { }
 
   ngOnInit(): void {
+
+    this.frequentPageName='Offers';
+    this.frequentPageUrl='http://localhost:4200'
   }
 
 }
