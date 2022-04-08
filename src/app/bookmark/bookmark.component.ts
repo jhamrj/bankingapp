@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class BookmarkComponent implements OnInit {
   frequentPageName: any;
   frequentPageUrl: any;
+  clicked: string;
 
   constructor() { }
 
@@ -19,5 +20,6 @@ export class BookmarkComponent implements OnInit {
 
   actualColorChange() {
     console.log("Back ground color will be changed......");
+
   }
 }
