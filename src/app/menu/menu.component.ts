@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {MenuItem} from "primeng/api";
 import {MenuService} from "../services/menu.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'bank-menu',
@@ -14,6 +15,7 @@ export class MenuComponent implements OnInit {
 
   ngOnInit(): void {
     this.items=this.menuService.getMenuItems();
+
   }
 
 }
