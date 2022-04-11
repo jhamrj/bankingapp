@@ -11,6 +11,9 @@ import {ExportComponent} from "./export/export.component";
 import {CopyComponent} from "./copy/copy.component";
 import {RegisterComponent} from "./register/register.component";
 import {LoginComponent} from "./login/login.component";
+import {ApproveComponent} from "./delete/approve/approve.component";
+import {ViewComponent} from "./export/view/view.component";
+import {AmendComponent} from "./export/amend/amend.component";
 
 const routes: Routes = [
   {
@@ -42,11 +45,27 @@ const routes: Routes = [
       },
         {
           path:'Delete',
-          component:DeleteComponent
+          component:DeleteComponent,
+          children:[
+            {
+              path: 'Approve',
+              component:ApproveComponent
+            }
+          ]
         },
         {
           path:'Export',
-          component:ExportComponent
+          component:ExportComponent,
+          children:[
+            {
+              path: 'View',
+              component: ViewComponent
+            },
+            {
+               path: 'Amend',
+              component: AmendComponent
+            }
+          ]
         }
       ]
 

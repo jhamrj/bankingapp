@@ -36,6 +36,9 @@ import {MatCheckboxModule} from "@angular/material/checkbox";
 import {FileUploadModule} from "primeng/fileupload";
 import { PageComponent } from './bookmark/page/page.component';
 import { HighlightComponent } from './bookmark/highlight/highlight.component';
+import { ApproveComponent } from './delete/approve/approve.component';
+import { ViewComponent } from './export/view/view.component';
+import { AmendComponent } from './export/amend/amend.component';
 
 
 
@@ -57,7 +60,10 @@ import { HighlightComponent } from './bookmark/highlight/highlight.component';
     VideoeditComponent,
     VideodeleteComponent,
     PageComponent,
-    HighlightComponent
+    HighlightComponent,
+    ApproveComponent,
+    ViewComponent,
+    AmendComponent
   ],
   imports: [
     BrowserModule,

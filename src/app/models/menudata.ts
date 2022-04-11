@@ -6,9 +6,13 @@ export const MenuData:MenuModel[]=[new MenuModel('File',
       new SubItem('Video','pi pi-fw pi-video','File/New/Video')],'File/New'),
 
   new Item('Delete','pi pi-fw pi-trash',
-    [new SubItem('','','')],'File/Delete'),
-    new Item('Export','pi pi-fw pi-external-link',[new SubItem('',
-      '','')],'File/Export')
+    [new SubItem('Approve','','File/Delete/Approve')],'File/Delete'),
+    new Item('Export','pi pi-fw pi-external-link',[new SubItem('View',
+      '','File/Export/View'),
+      new SubItem('Amend',
+        '','File/Export/Amend')
+    ],'File/Export'),
+
   ],'File',
 
 

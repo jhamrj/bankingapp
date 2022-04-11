@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ViewEncapsulation} from '@angular/core';
 import {ConfigService} from "./config.service";
 import {AuthService} from "./services/auth.service";
 import {NavigationCancel, NavigationEnd, NavigationError, NavigationStart, Router, Event} from "@angular/router";
@@ -9,7 +9,8 @@ const DATA_URL='http://localhost:4200'
 @Component({
   selector: 'bank-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  encapsulation: ViewEncapsulation.Emulated,
 })
 
 export class AppComponent implements OnInit{
