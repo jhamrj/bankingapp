@@ -8,7 +8,7 @@ import {Component, OnInit, ViewEncapsulation} from '@angular/core';
     <app-amend></app-amend>
   `,
   styles: ['h2, .emulated-message { color: green; }'],
-  encapsulation: ViewEncapsulation.ShadowDom,
+  encapsulation: ViewEncapsulation.Emulated,
 })
 export class ViewComponent implements OnInit {
 

@@ -18,7 +18,8 @@ import {AmendComponent} from "./export/amend/amend.component";
 const routes: Routes = [
   {
     path:'Register',
-    component:RegisterComponent
+    component:RegisterComponent,
+
   },
   {
     path:'Login',
