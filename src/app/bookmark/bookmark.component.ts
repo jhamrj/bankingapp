@@ -12,7 +12,7 @@ export class BookmarkComponent implements OnInit {
   frequentPageUrl: any;
   clicked: string;
 
-  @ViewChild(PageComponent) pageComponent!: PageComponent;
+  @ViewChild(PageComponent) pageComponent: PageComponent;
 
   constructor() { }
 

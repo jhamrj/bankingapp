@@ -2,6 +2,7 @@
 <header class="navbar">
   <img src="{{logo}}"/>
   <h1 class="multicolortext">{{title}}</h1>
+
   <ul *ngIf="!isLoggedIn">
     <li><a href="Register"><h6 class="multicolortextul">Signup</h6></a></li>
     <li><a href="Login"><h6 class="multicolortextul">Login</h6></a></li>
@@ -13,7 +14,7 @@
   </ul>
   <img src="{{banner}}" class="banner"/>
 </header>
-
+<h2 >Test Encapsulation</h2>
 
 <router-outlet>
 
