@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'app-page',
@@ -11,10 +11,14 @@ export class PageComponent implements OnInit {
   @Input()
   pageUrl:string;
 
+  toggle:boolean;
+
 
   constructor() { }
 
   ngOnInit(): void {
+    this.toggle=false;
   }
+
 
 }
