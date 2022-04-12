@@ -6,13 +6,15 @@ import {RouterModule} from "@angular/router";
 import {GalleryRoutingModule} from "./gallery-routing.module";
 import {ReactiveFormsModule} from "@angular/forms";
 import {FileUploadModule} from "primeng/fileupload";
+import { DownloadComponent } from './album/download/download.component';
 
 
 
 @NgModule({
   declarations: [
     AlbumComponent,
-    UploadComponent
+    UploadComponent,
+    DownloadComponent
   ],
   imports: [
     CommonModule,

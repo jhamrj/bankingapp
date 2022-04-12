@@ -1,0 +1,7 @@
+<table *ngIf="photosData?.length>0">
+  <tr *ngFor="let photo of photosData">
+    <td>
+      <img src="{{photo.thumbnailUrl}}"/>
+    </td>
+  </tr>
+</table>
