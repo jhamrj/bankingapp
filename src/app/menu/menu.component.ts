@@ -11,7 +11,10 @@ import {Router} from "@angular/router";
 export class MenuComponent implements OnInit {
    items: any;
 
-  constructor(private menuService:MenuService) { }
+  constructor(private menuService:MenuService) {
+
+
+  }
 
   ngOnInit(): void {
     this.items=this.menuService.getMenuItems();

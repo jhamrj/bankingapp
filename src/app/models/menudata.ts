@@ -28,7 +28,9 @@ export const MenuData:MenuModel[]=[new MenuModel('File',
   ),
   new MenuModel('Gallery',
     [new Item('album','pi pi-fw pi-pencil',
-      [new SubItem('upload','','Gallery/Album/Upload')],'Gallery/Album')
+      [new SubItem('upload','','Gallery/Album/Upload'),
+        new SubItem('download','','Gallery/Album/Download')
+      ],'Gallery/Album')
 
 
     ],'Gallery',),
