@@ -1,7 +1,15 @@
+<div>
+  <mat-form-field>
+    <mat-placeholder>
+      <mat-icon>search</mat-icon>
+      Search
+    </mat-placeholder>
+    <input type="text" matInput [(ngModel)]="searchData" name="searchText"/>
+  </mat-form-field>
+</div>
+
 <table *ngIf="photosData?.length>0">
-  <tr *ngFor="let photo of photosData">
-    <td>
-      <img src="{{photo.thumbnailUrl}}"/>
-    </td>
+  <tr *ngFor="let photo of photosData|photoFilter:searchData">
+    <td><img src="{{photo.thumbnailUrl}}"/></td>
   </tr>
 </table>
