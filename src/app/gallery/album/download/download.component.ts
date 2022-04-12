@@ -10,12 +10,16 @@ export class DownloadComponent implements OnInit {
 
   constructor(private route:ActivatedRoute) { }
   photosData:any;
+
+  searchData: string='5';
   ngOnInit(): void {
 
     this.route.data.subscribe(response=>
       {
         console.log(response[0]);
         this.photosData=response[0].default;
+
+
       }
     )
   }
