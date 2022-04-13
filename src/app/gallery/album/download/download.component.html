@@ -9,6 +9,7 @@
 </div>
 
 <table *ngIf="photosData?.length>0">
+  <!--pipe-->
   <tr *ngFor="let photo of photosData|photoFilter:searchData">
     <td><img src="{{photo.thumbnailUrl}}"/></td>
   </tr>
