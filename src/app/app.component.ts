@@ -37,6 +37,7 @@ export class AppComponent implements OnInit{
         this.title=this.configService.getTitle();
 
         console.log(this.token_key,this.auth_user);
+
     this.router.events
       .pipe(filter((rs): rs is NavigationEnd => rs instanceof NavigationEnd))
       .subscribe(event => {

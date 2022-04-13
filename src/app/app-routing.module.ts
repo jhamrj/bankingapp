@@ -14,6 +14,7 @@ import {LoginComponent} from "./login/login.component";
 import {ApproveComponent} from "./delete/approve/approve.component";
 import {ViewComponent} from "./export/view/view.component";
 import {AmendComponent} from "./export/amend/amend.component";
+//import {LoginGuard} from "./services/loginguard";
 
 const routes: Routes = [
   {
@@ -28,15 +29,22 @@ const routes: Routes = [
   {
     path:'Menu',
     component:MenuComponent,
+    //canActivate:[LoginGuard],
+   // canActivateChild:[LoginGuard],
     children:[{
       path:'File',
       component:FileComponent,
+    //  canActivate:[LoginGuard],
+    //  canActivateChild:[LoginGuard],
       children:[{
         path:'New',
         component:NewComponent,
+     //   canActivate:[LoginGuard],
+     //   canActivateChild:[LoginGuard],
         children:[{
           path:'Bookmark',
           component:BookmarkComponent
+
         },
           {
             path:'Video',
@@ -74,6 +82,8 @@ const routes: Routes = [
       {
         path:'Edit',
         component:EditComponent,
+       // canActivate:[LoginGuard],
+       // canActivateChild:[LoginGuard],
         children:[{
           path: 'Copy',
           component: CopyComponent
@@ -82,6 +92,8 @@ const routes: Routes = [
       //lazy loading
       {
         path: 'Gallery',
+     //   canActivate:[LoginGuard],
+     //   canActivateChild:[LoginGuard],
         loadChildren: () => import('./gallery/gallery.module')
           .then(m => m.GalleryModule)
 

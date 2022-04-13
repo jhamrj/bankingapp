@@ -34,7 +34,9 @@ password:any;
         console.log(x.userName)
           this.authService.saveToken(x._id);
           this.authService.saveUser(x.userName);
-           this.router.navigate(['/Menu'],{skipLocationChange: true})
+          // this.router.navigate(['/Menu'],{skipLocationChange: true})
+
+          this.router.navigate(['/Menu']);
       }
 
 
